@@ -18,34 +18,28 @@ class App extends Component {
     }));
   };
 
+  toggleWatched = (id) => {
+    this.setState((prevState) => ({
+      movies: prevState.movies.map((movie) => {
+        if (movie.id === id) {
+          return { ...movie, isWatched: !movie.isWatched };
+        }
+        return movie;
+      }),
+    }));
+  };
+
   render() {
     const { isShown, movies } = this.state;
     return (
       <>
         <Button showFilms={this.showFilms} isShown={isShown} />
-        {isShown && <GalleryList movies={movies} />}
+        {isShown && (
+          <GalleryList movies={movies} toggleWatched={this.toggleWatched} />
+        )}
       </>
     );
   }
 }
 
 export default App;
-
-//  return (
-//    <div className="App">
-//      <header className="App-header">
-//        <img src={logo} className="App-logo" alt="logo" />
-//        <p>
-//          Edit <code>src/App.js</code> and save to reload.
-//        </p>
-//        <a
-//          className="App-link"
-//          href="https://reactjs.org"
-//          target="_blank"
-//          rel="noopener noreferrer"
-//        >
-//          Learn React
-//        </a>
-//      </header>
-//    </div>
-//  );
