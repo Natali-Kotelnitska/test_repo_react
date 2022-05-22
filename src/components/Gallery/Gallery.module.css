@@ -1,0 +1,13 @@
+.galleryList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  /* padding: 40px; */
+  /* max-width: 1000px; */
+  width: 100%;
+}
+
+.galleryImg {
+  display: block;
+  width: 300px;
+}

@@ -1,14 +1,22 @@
 import propTypes from "prop-types";
+import s from "./Gallery.module.css";
+
 export const GalleryListItem = ({
   img,
   title,
   id,
   isWatched,
   toggleWatched,
+  onClick,
 }) => {
   return (
-    <li id={id}>
-      <img src={`https://image.tmdb.org/t/p/w500/${img}`} alt={title} />
+    <li className={s.galleryItem}>
+      <img
+        src={`https://image.tmdb.org/t/p/w500/${img}`}
+        alt={title}
+        className={s.galleryImg}
+        onclick={() => onClick(img)}
+      />
       <h2>{title}</h2>
       <p onClick={() => toggleWatched(id)}>Watched: {isWatched.toString()}</p>
     </li>
@@ -17,7 +25,7 @@ export const GalleryListItem = ({
 
 GalleryListItem.propTypes = {
   img: propTypes.string.isRequired,
-  title: propTypes.string.isRequired,
+  title: propTypes.string,
   id: propTypes.number.isRequired,
   isWatched: propTypes.bool.isRequired,
   toggleWatched: propTypes.func.isRequired,
