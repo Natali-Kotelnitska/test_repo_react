@@ -51,6 +51,7 @@ export default function App() {
       }),
     }));
   };
+
   // state = {
   //   // movies: mapper(movies),
   //   movies: "",

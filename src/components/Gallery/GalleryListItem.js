@@ -15,7 +15,7 @@ export const GalleryListItem = ({
         src={`https://image.tmdb.org/t/p/w500/${img}`}
         alt={title}
         className={s.galleryImg}
-        onclick={() => onClick(img)}
+        onClick={() => onClick(img)}
       />
       <h2>{title}</h2>
       <p onClick={() => toggleWatched(id)}>Watched: {isWatched.toString()}</p>
@@ -28,5 +28,5 @@ GalleryListItem.propTypes = {
   title: propTypes.string,
   id: propTypes.number.isRequired,
   isWatched: propTypes.bool.isRequired,
-  toggleWatched: propTypes.func.isRequired,
+  // toggleWatched: propTypes.func.isRequired,
 };
