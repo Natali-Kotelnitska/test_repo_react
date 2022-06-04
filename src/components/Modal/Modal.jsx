@@ -1,5 +1,6 @@
 import s from "./Modal.module.css";
 import { useState, useEffect } from "react";
+
 const Modal = ({ img, closeModal }) => {
   const [loaded, setLoaded] = useState(false);
 
@@ -14,6 +15,7 @@ const Modal = ({ img, closeModal }) => {
       window.removeEventListener("keydown", escapeHandler);
     };
   });
+
   const onLoad = () => {
     setLoaded(true);
   };
@@ -23,8 +25,8 @@ const Modal = ({ img, closeModal }) => {
       <img
         src={`https://image.tmdb.org/t/p/w780/${img}`}
         alt=""
-        style={{ display: loaded ? "black" : "none" }}
         onLoad={onLoad}
+        style={{ display: loaded ? "block" : "none" }}
       />
       {!loaded && (
         <h1 style={{ color: "white", fontSize: 50 }}> Loading ...</h1>

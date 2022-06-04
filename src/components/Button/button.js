@@ -10,7 +10,7 @@ const Button = ({ onClick }) => {
 // 1 варіант
 // export const Button = ({ showFilms, isShown }) => {
 //   return (
-//     <button onClick={showFilms}>{isShown ? "Hidefilms" : "Show films"}</button>
+//     <button type='button' onClick={showFilms}>{isShown ? "Hidefilms" : "Show films"}</button>
 //   );
 // };
 

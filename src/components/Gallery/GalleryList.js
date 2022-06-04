@@ -3,7 +3,7 @@ import propTypes from "prop-types";
 import s from "./Gallery.module.css";
 
 // export const GalleryList = ({ movies, toggleWatched }) => {
-export const GalleryList = ({ movies, openModal, toggleWatched }) => {
+export const GalleryList = ({ movies, openModal }) => {
   return (
     <ul className={s.galleryList}>
       {movies.map(({ img, title, id, isWatched }) => (
@@ -14,7 +14,7 @@ export const GalleryList = ({ movies, openModal, toggleWatched }) => {
           id={id}
           onClick={openModal}
           isWatched={isWatched}
-          toggleWatched={toggleWatched}
+          // toggleWatched={toggleWatched}
         />
       ))}
     </ul>
@@ -31,5 +31,5 @@ GalleryList.propTypes = {
     })
   ),
   openModal: propTypes.func.isRequired,
-  toggleWatched: propTypes.func.isRequired,
+  // toggleWatched: propTypes.func.isRequired,
 };

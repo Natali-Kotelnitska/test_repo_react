@@ -17,7 +17,7 @@ export default function App() {
 
   useEffect(() => {
     setIsloading(true);
-    getMovies()
+    getMovies(page)
       .then((results) => {
         const nextMovies = mapper(results);
         setMovies((prevMovies) => [...prevMovies, ...nextMovies]);
@@ -38,51 +38,26 @@ export default function App() {
   const closeModal = () => {
     setImage("");
   };
-  const toggleWatched = (id) => {
-    this.setState((prevState) => ({
-      movies: prevState.movies.map((movie) => {
-        if (movie.id === id) {
-          return {
-            ...movies,
-            isWatched: !movie.isWatched,
-          };
-        }
-        return movie;
-      }),
-    }));
-  };
-
-  // state = {
-  //   // movies: mapper(movies),
-  //   movies: "",
-  //   isShown: false,
+  // const toggleWatched = (id) => {
+  //   setMovies((prevState) => ({
+  //     prevState.movies.map((movie) => {
+  //       if (movie.id === id) {
+  //         return {
+  //           ...movies,
+  //           isWatched: !movie.isWatched,
+  //         };
+  //       }
+  //       return movie;
+  //     }),
+  //   }));
   // };
 
-  // showFilms = () => {
-  // this.setState((prevState) => ({
-  //   isShown: !prevState.isShown,
-  // }));
-  // };
-
-  // toggleWatched = (id) => {
-  // this.setState((prevState) => ({
-  //   movies: prevState.movies.map((movie) => {
-  //     if (movie.id === id) {
-  //       return { ...movie, isWatched: !movie.isWatched };
-  //     }
-  //     return movie;
-  //   }),
-  // }));
-  // };
-
-  // render() {
-  // const { isShown, movies } = this.state;
   return (
     <>
       <GalleryList
         movies={movies}
         openModal={openModal}
-        toggleWatched={toggleWatched}
+        // toggleWatched={toggleWatched}
       />
       {isLoading && <h1>Loading ...</h1>}
       <Button onClick={onClick} />
@@ -94,4 +69,30 @@ export default function App() {
     </>
   );
 }
-// }
+
+// Classes
+// state = {
+//   // movies: mapper(movies),
+//   movies: "",
+//   isShown: false,
+// };
+
+// showFilms = () => {
+// this.setState((prevState) => ({
+//   isShown: !prevState.isShown,
+// }));
+// };
+
+// toggleWatched = (id) => {
+// this.setState((prevState) => ({
+//   movies: prevState.movies.map((movie) => {
+//     if (movie.id === id) {
+//       return { ...movie, isWatched: !movie.isWatched };
+//     }
+//     return movie;
+//   }),
+// }));
+// };
+
+// render() {
+// const { isShown, movies } = this.state;
