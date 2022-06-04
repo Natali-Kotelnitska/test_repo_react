@@ -10,7 +10,7 @@ export const GalleryList = ({ movies, openModal }) => {
         <GalleryListItem
           key={id}
           img={img}
-          title={title}
+          title={title || "The best movie ever"}
           id={id}
           onClick={openModal}
           isWatched={isWatched}

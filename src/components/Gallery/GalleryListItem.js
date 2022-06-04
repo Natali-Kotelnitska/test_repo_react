@@ -4,13 +4,15 @@ import s from "./Gallery.module.css";
 export const GalleryListItem = ({ img, title, id, isWatched, onClick }) => {
   return (
     <li className={s.galleryItem}>
-      <h2>{title}</h2>
-      <img
-        src={`https://image.tmdb.org/t/p/w500/${img}`}
-        alt={title}
-        className={s.galleryImg}
-        onClick={() => onClick(img)}
-      />
+      <h2 className={s.imageTitle}>{title}</h2>
+      <div className={s.imgContainer}>
+        <img
+          src={`https://image.tmdb.org/t/p/w500/${img}`}
+          alt={title}
+          className={s.galleryImg}
+          onClick={() => onClick(img)}
+        />
+      </div>
 
       {/* <p onClick={() => toggleWatched(id)}>Watched: {isWatched.toString()}</p> */}
     </li>
